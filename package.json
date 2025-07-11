@@ -1,0 +1,34 @@
+{
+  "name": "@whoof/template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "whop-proxy --command 'next dev --turbopack -p 3010' --upstreamPort=3010 --proxyPort=3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@vercel/functions": "^2.0.3",
+    "@whoof/auth": "git+https://github.com/AlbertoV5/whoof-auth.git",
+    "@whoof/db": "git+https://github.com/AlbertoV5/whoof-db.git",
+    "@whop/api": "^0.0.33",
+    "@whop/react": "^0.2.23",
+    "dotenv": "^17.2.0",
+    "dotenv-expand": "^12.0.2",
+    "next": "15.3.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@whop-apps/dev-proxy": "0.0.1-canary.116",
+    "dotenv-cli": "^8.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
