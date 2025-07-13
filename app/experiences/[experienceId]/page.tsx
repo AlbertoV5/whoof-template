@@ -5,7 +5,7 @@ import { AppBuilder } from '@whoof/ui';
 import { env } from '@/lib/env';
 import 'frosted-ui/styles.css';
 
-export default async function Layout({
+export default async function ExperiencePage({
 	children,
 	params
 }: {
@@ -28,8 +28,7 @@ export default async function Layout({
 			console.log('🔍 User:', user)
 			console.log('🔍 Experience:', experience)
 			try {
-				return {
-				}
+				return {}
 			} catch (error) {
 				throw error
 			}

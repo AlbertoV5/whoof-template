@@ -32,13 +32,12 @@ export function withAuth<Inputs extends Record<string, any>, Output>(
 
 // Cache user authentication for the entire request
 export const getAuthenticatedUser = cache(async (experienceId: string) => {
-  const developerUserIds = [env.WHOP_DEV_USER_ID]
   return getCachedUserAuthentication(
     whopSdk,
     experienceId,
     ({ userId, accessLevel }: { userId: string; accessLevel: any }) => {
       if (!accessLevel || accessLevel === "no_access") return null
-      if (developerUserIds.includes(userId)) {
+      if (env.WHOP_DEV_USER_IDS.includes(userId)) {
         return "developer"
       }
       if (accessLevel === "admin") {

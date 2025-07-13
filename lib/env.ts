@@ -12,7 +12,9 @@ const envSchema = z
     NEXT_PUBLIC_WHOP_AGENT_USER_ID: z.string(),
     NEXT_PUBLIC_WHOP_COMPANY_ID: z.string(),
     NEXT_PUBLIC_WHOP_APP_ID: z.string(),
-    WHOP_DEV_USER_ID: z.string(),
+    WHOP_DEV_USER_IDS: z
+      .string()
+      .transform((str) => str.split(",").map((s) => s.trim())),
     API_SECRET: z.string().default("secret"),
     DB_URL: z.string(),
     DB_NAME: z.string(),
