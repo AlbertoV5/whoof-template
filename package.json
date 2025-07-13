@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/functions": "^2.0.3",
-    "@whoof/auth": "git+https://github.com/AlbertoV5/whoof-auth.git",
-    "@whoof/db": "git+https://github.com/AlbertoV5/whoof-db.git",
+    "@whoof/auth": "workspace:*",
+    "@whoof/db": "workspace:*",
+    "@whoof/ui": "workspace:*",
     "@whop/api": "^0.0.33",
     "@whop/react": "^0.2.23",
+    "@vercel/functions": "^2.0.3",
     "dotenv": "^17.2.0",
     "dotenv-expand": "^12.0.2",
     "next": "15.3.2",
