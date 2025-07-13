@@ -17,9 +17,6 @@ const envSchema = z
       .transform((str) => str.split(",").map((s) => s.trim())),
     API_SECRET: z.string().default("secret"),
     DB_URL: z.string(),
-    DB_NAME: z.string(),
-    DB_SECRET_ARN: z.string(),
-    DB_RESOURCE_ARN: z.string(),
   })
   .superRefine((input, ctx) => {})
 

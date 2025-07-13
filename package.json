@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@whoof/infra": "workspace:*",
     "@whoof/auth": "workspace:*",
     "@whoof/db": "workspace:*",
     "@whoof/ui": "workspace:*",
