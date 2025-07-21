@@ -2,7 +2,6 @@ import { Theme } from 'frosted-ui';
 import { headers } from 'next/headers';
 import { WhopThemeScript } from "@whop/react";
 import { Geist, Geist_Mono } from "next/font/google";
-import { WhopThemeProvider } from '@whop-apps/sdk';
 import { verifyUserToken } from '@whop/api';
 import { env } from '@/lib/env';
 
@@ -28,13 +27,11 @@ export default async function Page() {
 					<WhopThemeScript />
 				</head>
 				<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-					<WhopThemeProvider>
-						<Theme accentColor="blue">
-							<div className="flex flex-col items-center justify-center h-screen">
-								<p>Please <a className="text-blue-9" href={INSTALL_URL}>install</a> this app via Whop.</p>
-							</div>
-						</Theme>
-					</WhopThemeProvider>
+					<Theme accentColor="blue">
+						<div className="flex flex-col items-center justify-center h-screen">
+							<p>Please <a className="text-blue-9" href={INSTALL_URL}>install</a> this app via Whop.</p>
+						</div>
+					</Theme>
 				</body>
 			</html>
 		)
