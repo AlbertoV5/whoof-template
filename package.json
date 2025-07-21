@@ -13,7 +13,7 @@
     "@whoof/auth": "^0.1.2",
     "@whoof/db": "^0.1.0",
     "@whoof/infra": "^0.1.7",
-    "@whoof/ui": "^0.1.2",
+    "@whoof/ui": "^0.1.3",
     "@whop/api": "^0.0.33",
     "@whop/react": "^0.2.23",
     "dotenv": "^17.2.0",
