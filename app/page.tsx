@@ -19,10 +19,15 @@ const INSTALL_URL = `https://whop.com/apps/${env.NEXT_PUBLIC_WHOP_APP_ID}/instal
 
 export default async function Page() {
 	const headersList = await headers();
-	const result = await verifyUserToken(headersList);
-	if (!result) {
+	try {
+		const result = await verifyUserToken(headersList);
 		return (
-			<html className="dark" style={{ colorScheme: "dark" }}>
+			<div>{`Hello user ${result.userId}`}</div>
+		);
+	} catch (error) {
+		console.error(error);
+		return (
+			<html className="inherit" style={{ colorScheme: "inherit" }}>
 				<head>
 					<WhopThemeScript />
 				</head>
@@ -36,7 +41,5 @@ export default async function Page() {
 			</html>
 		)
 	}
-	return (
-		<div>Hello World</div>
-	);
+
 }

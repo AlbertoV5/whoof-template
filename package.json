@@ -11,7 +11,7 @@
   "dependencies": {
     "@vercel/functions": "^2.0.3",
     "@whoof/auth": "^0.1.2",
-    "@whoof/db": "^0.1.0",
+    "@whoof/db": "^0.2.1",
     "@whoof/infra": "^0.1.7",
     "@whoof/ui": "^0.1.3",
     "@whop/api": "^0.0.33",
