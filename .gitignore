@@ -42,8 +42,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# sst
-sst-env.d.ts
 # For template, ignore bun.lock
 bun.lockb
 bun.lock
