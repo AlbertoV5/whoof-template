@@ -3,7 +3,7 @@ import { headers } from 'next/headers';
 import { WhopThemeScript } from "@whop/react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { verifyUserToken } from '@whop/api';
-import { env } from '@/lib/env';
+import { env } from '@/lib/server/env';
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",

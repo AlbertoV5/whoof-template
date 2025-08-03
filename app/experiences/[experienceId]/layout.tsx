@@ -1,8 +1,8 @@
 import React from 'react';
-import { getAuthenticatedUser } from '@/lib/middleware/auth';
-import { whopSdk } from '@/lib/whop-sdk';
+import { getAuthenticatedUser } from '@/lib/server/middleware/auth';
+import { whopSdk } from '@/lib/server/whop';
 import { AppBuilder } from '@whoof/ui';
-import { env } from '@/lib/env';
+import { env } from '@/lib/server/env';
 import 'frosted-ui/styles.css';
 
 export default async function ExperiencePage({

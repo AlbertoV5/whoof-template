@@ -4,10 +4,10 @@ import {
   createUserAuthentication,
   getExperienceId,
 } from "@whoof/auth"
-import { whopSdk } from "../whop-sdk"
+import { whopSdk } from "../whop"
 import { cache } from "react"
 import { env } from "../env"
-import { accessModel } from "../config/auth.config"
+import { accessModel } from "../../config"
 
 // Cache user authentication for the entire request
 export const getAuthenticatedUser = cache(async (experienceId: string) => {
