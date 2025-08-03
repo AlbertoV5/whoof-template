@@ -1,5 +1,5 @@
 import { getDatabasePoolHandler, getMigratorHandler } from "@whoof/db"
-import { databaseConfig, devDatabaseConfig } from "@/lib/config"
+import { databaseConfig, devDatabaseConfig } from "@/lib/config/db.config"
 import * as schema from "./schema"
 
 export const withDatabasePool = getDatabasePoolHandler({

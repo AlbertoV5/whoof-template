@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAuthenticatedUser } from '@/lib/auth';
+import { getAuthenticatedUser } from '@/lib/middleware/auth';
 import { whopSdk } from '@/lib/whop-sdk';
 import { AppBuilder } from '../../../../../packages/ui/src/builder';
 import { env } from '@/lib/env';
