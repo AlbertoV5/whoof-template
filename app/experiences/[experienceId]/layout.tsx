@@ -1,7 +1,7 @@
 import React from 'react';
 import { getAuthenticatedUser } from '@/lib/middleware/auth';
 import { whopSdk } from '@/lib/whop-sdk';
-import { AppBuilder } from '../../../../../packages/ui/src/builder';
+import { AppBuilder } from '@whoof/ui';
 import { env } from '@/lib/env';
 import 'frosted-ui/styles.css';
 
