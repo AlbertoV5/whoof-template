@@ -25,7 +25,6 @@ export default async function Page() {
 			<div>{`Hello user ${result.userId}`}</div>
 		);
 	} catch (error) {
-		console.error(error);
 		return (
 			<html className="inherit" style={{ colorScheme: "inherit" }}>
 				<head>
