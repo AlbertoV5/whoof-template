@@ -1,9 +1,17 @@
+import { AppBuilder } from '@whoof/ui';
+import 'frosted-ui/styles.css';
 import React from 'react';
+
 import { getAuthenticatedUser } from '@/lib/server/middleware/auth';
 import { whopSdk } from '@/lib/server/whop';
-import { AppBuilder } from '@whoof/ui';
 import { env } from '@/lib/server/env';
-import 'frosted-ui/styles.css';
+import Main from '@/components/Main';
+
+import type { AppUser } from '@/lib/types';
+
+type AppInitialData = {
+	customKey?: string
+}
 
 export default async function ExperiencePage({
 	children,
@@ -12,13 +20,19 @@ export default async function ExperiencePage({
 	children: React.ReactNode
 	params: Promise<{ experienceId: string }>
 }) {
-	return <AppBuilder
+	return <AppBuilder<AppUser, AppInitialData>
 		params={params}
 		whopSdk={whopSdk}
 		appView={{
-			user: ({ user, experience, validKey, untypedKey }) => (<div>User {user.userId} {experience.id}</div>),
-			creator: ({ user, experience }) => (<div>Creator {user.userId} {experience.id}</div>),
-			developer: ({ user, experience }) => (<div>Developer {user.userId} {experience.id}</div>),
+			user: ({ user, experience, customKey }) => (
+				<Main user={user} />
+			),
+			creator: ({ user, experience }) => (
+				<Main user={user} />
+			),
+			developer: ({ user, experience }) => (
+				<Main user={user} />
+			),
 		}}
 		appConfig={{
 			appId: env.NEXT_PUBLIC_WHOP_APP_ID,
@@ -29,7 +43,7 @@ export default async function ExperiencePage({
 			console.log('🔍 Experience:', experience)
 			try {
 				return {
-					validKey: "value",
+					customKey: "myCustomValue",
 				}
 			} catch (error) {
 				throw error

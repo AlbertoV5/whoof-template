@@ -4,6 +4,7 @@ import "./globals.css";
 import "frosted-ui/styles.css";
 import { Theme } from "frosted-ui";
 import { WhopThemeScript } from "@whop/react";
+import { appMetadata, appTheme } from "@/lib/config";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -15,10 +16,7 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-	title: "Whop App",
-	description: "My Whop App",
-};
+export const metadata: Metadata = appMetadata;
 
 export default async function RootLayout({
 	children,
@@ -34,7 +32,7 @@ export default async function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<Theme appearance="inherit" accentColor="blue">
+				<Theme {...appTheme}>
 					{children}
 				</Theme>
 			</body>
