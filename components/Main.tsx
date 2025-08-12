@@ -5,15 +5,17 @@ import React, { useState } from 'react'
 
 import type { AppUser } from '@/lib/types'
 import { appMetadata } from '@/lib/config'
-import { client } from '@/lib/client'
+import { useAPIClient } from '@/lib/client'
 
 type Props = {
   user: AppUser
+  experienceId: string
 }
 
-const Main = ({ user }: Props) => {
+const Main = ({ user, experienceId }: Props) => {
   const [message, setMessage] = useState("")
   const [name, setName] = useState("")
+  const client = useAPIClient(experienceId)
 
   async function handleGetUserName() {
     const response = await client.api.$post({ json: { userId: user.userId } })

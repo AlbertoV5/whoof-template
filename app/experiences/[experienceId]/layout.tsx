@@ -25,13 +25,13 @@ export default async function ExperiencePage({
 		whopSdk={whopSdk}
 		appView={{
 			user: ({ user, experience, customKey }) => (
-				<Main user={user} />
+				<Main user={user} experienceId={experience.id} />
 			),
 			creator: ({ user, experience }) => (
-				<Main user={user} />
+				<Main user={user} experienceId={experience.id} />
 			),
 			developer: ({ user, experience }) => (
-				<Main user={user} />
+				<Main user={user} experienceId={experience.id} />
 			),
 		}}
 		appConfig={{
